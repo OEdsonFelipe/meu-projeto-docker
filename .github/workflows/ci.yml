@@ -40,7 +40,7 @@ jobs:
           
       - name: Smoke test do CRUD
         run: |
-          curl -sf -X POST http://localhost:3000/items \
+          curl -sf -X POST http://localhost:3000/itemsss \
             -H 'Content-Type: application/json' \
             -d '{"id":"ci-test-1","name":"tarefa criada pelo CI","completed":false}'
           echo ""
