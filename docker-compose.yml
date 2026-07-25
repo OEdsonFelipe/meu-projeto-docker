@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    networks:
+      - todo-net
+    # O healthcheck testa se o banco está pronto para receber conexões
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DB: ${MYSQL_DATABASE}
+    networks:
+      - todo-net
+    depends_on:
+      db:
+        # O app só sobe quando o healthcheck do db retornar "healthy"
+        condition: service_healthy
+
+networks:
+  todo-net:
+
+volumes:
+  todo-mysql-data:
