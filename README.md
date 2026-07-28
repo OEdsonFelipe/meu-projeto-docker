@@ -149,4 +149,40 @@ Link do Pull Request: [Cole aqui a URL do seu Pull Request do GitHub]
     [x] PR com CI vermelho documentado
 
     [x] Todos os 9 prints no README
+    
+# CD — Publicação no Docker Hub
+
+- Aluno(a): Edson Felipe Rocha Constancio Turma: ITEAM-Noturno
+- Usuário do Docker Hub: OEdsonFelipe
+- Imagem publicada: oedsonfelipe/meu-projeto-docker:latest
+- Link da imagem no Docker Hub: https://hub.docker.com/r/oedsonfelipe/meu-projeto-docker
+- Dispara quando: push na branch main
+- Arquivo do workflow: .github/workflows/cd.yml
+
+# Print 1 — token criado no Docker Hub 
+<img width="1915" height="547" alt="Print 1 - CD" src="https://github.com/user-attachments/assets/1df5abf6-4b84-4758-9c61-5b8f7aea9b1e" />
+
+# Print 2 — Secrets cadastrados no GitHub (DOCKERHUB_USERNAME e
+DOCKERHUB_TOKEN)
+<img width="1915" height="902" alt="Print 2 - CD" src="https://github.com/user-attachments/assets/24d3d1cc-21e8-4f44-b5d8-2b3c1f6fb404" />
+
+# Print 3 — workflow de CD verde na aba Actions
+<img width="1905" height="655" alt="Print 3 - CD em ação" src="https://github.com/user-attachments/assets/909a6303-4353-4535-85a3-56eabd97c48c" />
+
+# Print 4 - imagem publicada no Docker Hub
+<img width="1917" height="707" alt="Print 4 - Hub Docker" src="https://github.com/user-attachments/assets/957da6c7-a81f-4e3f-8fd7-8290ba704002" />
+
+# Print 5 - docker pull baixando a imagem publicada
+<img width="1475" height="282" alt="Captura de tela 2026-07-28 001445" src="https://github.com/user-attachments/assets/e89c904d-bd34-4e1e-97f7-9ea843422e63" />
+<img width="1908" height="898" alt="Captura de tela 2026-07-28 002011" src="https://github.com/user-attachments/assets/c460f6bc-a1bc-45c2-91ce-cf52f47e4662" />
+
+# Respostas
+1. O que é o Docker Hub? Serve para compartilhar e baixar as imagens de containers na nuvem.
+2. Diferença entre CI e CD: CI automatiza a junção e os testes do código. Já o CD ele pega esse código testado e o leva automaticamente para ambientes de produção ou servidores de forma rápida e segura.
+3. Por que usar token e Secrets em vez de escrever usuário e senha no cd.yml ? Por privacidade e boas práticas.
+4. O que significa a tag latest ? É um nome padrão aplicado a imagem do container, usa-se quando não tem nenhuma outra versão.
+
+
+
+
 
